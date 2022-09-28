@@ -1,0 +1,27 @@
+<br />
+<h2>Proizvodi</h2>
+<hr />
+
+<div *ngFor="let product of products">
+  <h3>
+    <a [title]="product.name">
+      {{ product.name }}
+    </a>
+  </h3>
+
+  <p *ngIf="product.description"><b>O uređaju:</b> {{ product.description }}</p>
+
+  <p *ngIf="product.price"><b>Cijena:</b> {{ product.price }} KM</p>
+
+  <button type="button" class="btn btn-outline-info btn-sm" (click)="share()">
+    Podijeli
+  </button>
+  <button
+    type="button"
+    class="btn btn-outline-success btn-sm"
+    (click)="buyit()"
+  >
+    Dodaj u košaru
+  </button>
+  <hr />
+</div>
